@@ -3,15 +3,16 @@ import { foodScehma } from "@/app/lib/foodsModel";
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
-export async function POST(request) {
+export async function GET(req, res) {
+    const id = res.params.id;
+    console.log(id);
     let success = false;
-    const payload = await request.json();
+
     await mongoose.connect(connectionStr, { useNewUrlParser: true })
-    
-    const food = new foodScehma(payload); 
-    const result = await food.save();
-    if(result){
+    const result = await foodScehma.find({resto_id:id});
+
+    if (result) {
         success = true;
     }
-    return NextResponse.json({ result, success })
+        return NextResponse.json({result,success});
 }
