@@ -5,11 +5,13 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import AddUseritem from '@/app/_components/AddUseritem'
 import { useState } from 'react'
+import FooditemList from '@/app/_components/fooditemList'
+import Footer from '@/app/_components/Footer'
 
 const dashboard = () => {
   const router = useRouter();
 
-  let [AddItem , setAddItem] = useState(false);
+  let [toggle , setToggle] = useState(true);
 
   const fetchLocalStorage = () => {
     const dataFromLocalStorage = localStorage.getItem('restaurantUser');
@@ -26,11 +28,11 @@ const dashboard = () => {
   return (
     <>
       <Header />
-      <button onClick={()=>setAddItem(true)}>Add new item</button>
-      <button onClick={()=>setAddItem(false)}>Dashboard</button>
-      {
-        AddItem?<AddUseritem/>:<h1>wellcome to Dashboard</h1>
-      }
+      <button className='login-button' onClick={()=>setToggle(!toggle)}>{toggle ? "Add new item":"Dashboard"}</button>
+     {
+      toggle? <FooditemList/>:<AddUseritem/>
+     }
+     <Footer/>
     </>
   )
 }

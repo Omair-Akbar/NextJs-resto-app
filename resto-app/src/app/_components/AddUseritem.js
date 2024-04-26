@@ -38,7 +38,7 @@ const AddUseritem = () => {
     }
     return (
         <>
-           <h1 className='login-page-heading'>Login</h1>
+           <h1 className='login-page-heading'>Add new item</h1>
             <div className='input-main'>
                 <div>
                     <input value={name} onChange={(e)=>{setName(e.target.value)}} className='input-box' type='text' placeholder='Name' />

@@ -139,5 +139,56 @@
     padding-left: 6px;
     margin-top:16px;
     margin-left: 6px;
+}
+.wrap-items-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+thead tr td {
+    font-size: 18px;
+    font-weight: 600;
+}
+thead{
+    background: linear-gradient(to right, yellow, rgb(252, 252, 33));
+}
 
+td,table{
+    border-collapse: collapse;
+    margin: 10px;
+    padding: 8px 14px 8px 14px;   
+    cursor: default;
+}
+
+table {
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 30px;
+}
+td button{
+    padding: 3px;
+    outline: none;
+    border: none;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    font-weight: 700;
+    border-radius:10px ;
+    width: 80px;
+    margin: 4px 3px 4px 3px;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+td button:hover{
+    transform: scale(1.1);
+    background-color: rgb(82, 82, 82) ;
+}
+tbody tr{
+    background-color: rgb(221, 221, 221);
+}
+tr .tr-id{
+    font-weight: 700;
+}
+tbody tr:nth-of-type(even){
+    background-color: rgb(255, 255, 152);
 }
