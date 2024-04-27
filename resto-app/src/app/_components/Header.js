@@ -1,7 +1,6 @@
 "use client"
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import "./style/style.css"
 import {useRouter} from 'next/navigation'
 
 const Header = () => {

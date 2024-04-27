@@ -30,7 +30,7 @@ const dashboard = () => {
       <Header />
       <button className='login-button' onClick={()=>setToggle(!toggle)}>{toggle ? "Add new item":"Dashboard"}</button>
      {
-      toggle? <FooditemsList/>:<AddUseritem/>
+      toggle? <FooditemsList />:<AddUseritem setToggle={setToggle}/>
      }
      <Footer/>
     </>

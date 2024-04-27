@@ -1,6 +1,5 @@
 "use client"
 import React from 'react'
-import "./style/style.css"
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 const RestaurantLogin = () => {

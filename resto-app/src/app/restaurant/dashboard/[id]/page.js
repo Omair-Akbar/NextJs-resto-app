@@ -1,16 +1,20 @@
+"use client"
+import Footer from '@/app/_components/Footer';
+import Header from '@/app/_components/Header';
 import React from 'react'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation';
 
 
-const AddUseritem = (props) => {
-
+const Editfooditems = (props) => {
+    const router = useRouter();
     let [name, setName] = useState("");
     let [price, setPrice] = useState("");
     let [path, setPath] = useState("");
     let [description, setDescription] = useState("");
     let [error, setError] = useState(false);
 
-    const handleAddItem = async () => {
+    const handleEditFoodItem = async () => {
         if (!name || !price || !path || !description) {
             setError(true);
             return false;
@@ -23,22 +27,13 @@ const AddUseritem = (props) => {
         if (restaurantData) {
             resto_id = restaurantData._id;
         }
-        let response = await fetch("http://localhost:3000/api/restaurant/foods", {
-            method: "post",
-            body: JSON.stringify({ name, price, path, description, resto_id })
-        });
-        response = await response.json();
-        if (response.success) {
-           props.setToggle(true);
-        }
-        else{
-            alert("Something went wrong!")
-        }
-
+       
     }
     return (
         <>
-           <h1 className='login-page-heading'>Add new item</h1>
+        <Header/>
+        <div className='edit-page'>
+           <h1 className='login-page-heading'>Edit food item</h1>
             <div className='input-main'>
                 <div>
                     <input value={name} onChange={(e)=>{setName(e.target.value)}} className='input-box' type='text' placeholder='Name' />
@@ -58,11 +53,16 @@ const AddUseritem = (props) => {
                     { error && !description && <span className='input-error'>Enter description!</span>}
                 </div>
                 <div>
-                    <button onClick={handleAddItem}  className='login-button'>Add new item</button>
+                    <button onClick={handleEditFoodItem}  className='login-button'>Save changes</button>
+                </div>
+                <div>
+                    <button onClick={()=>{router.push("/restaurant/dashboard")}}  className='login-button'>Back to food list</button>
                 </div>
             </div>
+            </div>
+            <Footer/>
         </>
     )
 }
 
-export default AddUseritem;
+export default Editfooditems;
