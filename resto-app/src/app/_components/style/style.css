@@ -192,3 +192,7 @@ tr .tr-id{
 tbody tr:nth-of-type(even){
     background-color: rgb(255, 255, 152);
 }
+.dashboard-img{
+    height: 100px;
+    width: auto;
+}

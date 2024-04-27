@@ -29,7 +29,12 @@ const AddUseritem = () => {
         });
         response = await response.json();
         if (response.success) {
-            alert("food item successfully added ")
+            alert("food item successfully added ");
+            setName("");
+            setPrice("");
+            setPath("");
+            setDescription("");
+
         }
         else{
             alert("Something went wrong!")

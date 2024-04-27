@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import AddUseritem from '@/app/_components/AddUseritem'
 import { useState } from 'react'
-import FooditemList from '@/app/_components/fooditemList'
+import FooditemsList from '@/app/_components/FooditemsList'
 import Footer from '@/app/_components/Footer'
 
 const dashboard = () => {
@@ -30,7 +30,7 @@ const dashboard = () => {
       <Header />
       <button className='login-button' onClick={()=>setToggle(!toggle)}>{toggle ? "Add new item":"Dashboard"}</button>
      {
-      toggle? <FooditemList/>:<AddUseritem/>
+      toggle? <FooditemsList/>:<AddUseritem/>
      }
      <Footer/>
     </>
