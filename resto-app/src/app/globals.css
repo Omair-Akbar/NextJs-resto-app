@@ -228,3 +228,101 @@ td img{
         width: 70px;
     }
 }
+.main-page-banner{
+    background-image: url(./images/banner.jpg);
+    background-size: cover;
+    padding: 30px;
+    height: 250px;
+}
+.banner-text{
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 255, 0);
+    font-size: 35px;
+    font-weight: 800;
+}
+*:focus{
+    outline: none;
+}
+.input-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 6px;
+    margin: 25px;
+}
+.input-wrapper input{
+    height: 40px;
+    border:1px solid rgba(189, 189, 189, 0.425);
+    margin: 5px;
+    background-color: rgba(53, 53, 53, 0.486);
+    width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    color: rgb(189, 189, 189);
+    font-size: 16px;
+}
+.input-wrapper input:focus{
+    border:1px solid rgba(255, 255, 255, 0.87);   
+}
+.input-wrapper input:hover{
+    border:1px solid rgba(255, 255, 255, 0.87); 
+    
+}
+.input-wrapper input:focus::placeholder{
+    color: rgba(255, 255, 255, 0.562);
+}
+.input-wrapper input:hover::placeholder{
+    color: rgba(255, 255, 255, 0.562);
+}
+
+.location-icon , .restaurant-icon{
+    color:rgba(189, 189, 189, 0.425) ;
+    position: relative;
+    font-size: 18px;
+    right: 30px;
+    top: 4px;
+}
+
+/* hover effect */
+.input-wrapper input:hover + .location-icon{
+    color: rgba(255, 255, 255, 0.87);
+}
+.input-wrapper input:hover + .restaurant-icon{
+    color: rgba(255, 255, 255, 0.87);
+}
+
+/* focus effect */
+.input-wrapper input:focus + .restaurant-icon{
+    color: rgba(255, 255, 255, 0.87);
+}
+.input-wrapper input:focus + .location-icon  {
+    color: rgba(255, 255, 255, 0.87);
+}
+.locations{
+    color: white;
+    position: absolute;
+    text-align: center;
+    transform: translate(5px);
+    text-align: left;
+    list-style-type: none;
+    border-radius: 0px 0px 10px 10px;
+    /* padding: 8px; */
+    background: rgba(54, 54, 54, 0.658);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.2px);
+    -webkit-backdrop-filter: blur(4.2px);
+    /* border: 1px solid rgba(255, 255, 255, 0.77); */
+    width: 300px;
+}
+.locations li {
+    padding: 12px;
+    cursor: pointer;
+}
+.locations li:hover{
+    background-color: rgba(255, 255, 255, 0.151);
+    border: 1px solid rgba(255, 255, 255, 0.493);
+    
+}

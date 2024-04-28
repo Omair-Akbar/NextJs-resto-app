@@ -7,8 +7,8 @@ const Header = () => {
 
     const [details,setDetails] = useState(null);
     const router = useRouter();
+    
     const fetchLocalStorage =()=>{ const dataFromLocalStorage = localStorage.getItem('restaurantUser');
-
    if (dataFromLocalStorage) {
       setDetails(JSON.parse(dataFromLocalStorage));
     }else{
@@ -30,7 +30,7 @@ const Header = () => {
       </div>
       <div>
         <ul className='uls'>
-          <li className='lis'><Link href="#">Home</Link></li>
+          <li className='lis'><Link href="/">Home</Link></li>
           <li className='lis'><Link href="#">Contact</Link></li>
            {
             details && details.email?<> <li className='lis'><Link href="#">Profile</Link></li><li className='lis'><Link href="/restaurant"><button onClick={logout} className='header-button' >Logout</button></Link></li></>:<li className='lis'><Link href="/restaurant"><button className='header-button' >Login</button></Link></li>
