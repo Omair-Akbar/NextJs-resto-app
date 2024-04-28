@@ -7,7 +7,8 @@ import { useRouter } from 'next/navigation';
 
 
 const Editfooditems = (props) => {
-    const router = useRouter();
+    console.log(props.params.id)
+    const router = useRouter(); 
     let [name, setName] = useState("");
     let [price, setPrice] = useState("");
     let [path, setPath] = useState("");

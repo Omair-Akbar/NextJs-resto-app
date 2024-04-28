@@ -2,7 +2,9 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    
+}
+body{
+    background-color: rgb(236, 236, 236);
 }
 .input-error{
     position: absolute;
@@ -194,7 +196,7 @@ td button:hover{
     background-color: rgb(82, 82, 82) ;
 }
 tbody tr{
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(255, 255, 255);
 }
 tr .tr-id{
     font-weight: 700;
