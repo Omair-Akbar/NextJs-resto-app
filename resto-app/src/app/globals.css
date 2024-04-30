@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(218, 218, 218);
+    overflow-x: hidden;
 }
 .input-error{
     position: absolute;
@@ -39,7 +40,7 @@ body{
     border-radius: 1rem;
     outline: none;
     border: none;
-    background-color: yellow;
+    background-color: #ffc200;
     transition: 0.2s ease-in;
     text-align: center;
     font-size: 14px;
@@ -56,7 +57,7 @@ body{
 
 .login-button:hover{
     transform: scale(1.05);
-    background-color: rgb(255, 255, 85);
+    background-color: #fccc31;
 }
 .input-main{
     display: flex;
@@ -104,18 +105,23 @@ body{
  }
  .lis a {
     text-decoration: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.699);
     padding: 3px;
     margin: 3px;
     font-size: 16px;
     font-weight: 600;
+    transition: 0.1s ease-in;
  }
+ .lis a:hover{
+    color: white; 
+transform: scale(2);
+}
  .header-button {
     height: 34px;
     border-radius: 1rem;
     outline: none;
     border: none;
-    background-color: yellow;
+    background-color: #ffc200;
     transition: 0.2s ease-in;
     text-align: center;
     font-size: 14px;
@@ -129,7 +135,7 @@ body{
 }
 .header-button:hover{
     transform: scale(1.05);
-    background-color: rgb(255, 255, 85);
+    background-color: #fdd550;
 }
  .footer-wrap {
     position: fixed;
@@ -149,7 +155,7 @@ body{
     margin-left: 10px;
 }
  .logo-span{
-    color: yellow;
+    color: #ffc200;
     font-size: larger;
  }
 
@@ -160,7 +166,7 @@ thead tr td {
     font-weight: 600;
 }
 thead{
-    background: linear-gradient(to right, yellow, rgb(252, 252, 33));
+    background: linear-gradient(to right, #ffc200, #ffdd6e);
 }
 
 td,table{
@@ -228,16 +234,17 @@ td img{
         width: 70px;
     }
 }
+
 .main-page-banner{
     background-image: url(./images/banner.jpg);
     background-size: cover;
     padding: 30px;
-    height: 250px;
+    height: 300px;
 }
 .banner-text{
     display: flex;
     justify-content: center;
-    color: rgb(255, 255, 0);
+    color: rgb(195, 197, 186);
     font-size: 35px;
     font-weight: 800;
 }
@@ -325,4 +332,69 @@ td img{
     background-color: rgba(255, 255, 255, 0.151);
     border: 1px solid rgba(255, 255, 255, 0.493);
     
+}
+
+.restaurants-wrap{
+background-color: beige;
+display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ justify-content: space-evenly;
+}
+.restaurant-inner-image{
+    height: 150px;
+    width: auto;
+    margin-right: 10px;
+}
+.restaurant{
+    height: 220px;
+    background-color: rgb(187, 185, 185);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    height: 180px;
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    max-width: 350px;
+}
+.restaurant div button{
+background-color: #ffc200;
+border-radius: 6px;
+height: 30px;
+width: 100px;
+margin: 10px;
+border: 1px solid #a37d008c;
+transition: .1s ease-in;
+font-weight: 550;
+text-align: center;
+cursor: pointer;
+}
+.restaurant div button:hover{
+    transform: scale(1.05);
+    background-color: #fcca25;
+
+}
+.name{
+    margin-bottom: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+@media screen and (max-width: 685px) {
+    .restaurant-inner-image{
+        height: 100px;
+        width: auto;
+        margin-right: 5px;
+    }
+    .main-page-banner{
+        height: 250px;
+    }
+    .name{
+        font-size: 16px;
+    }
+    div h5{
+        font-size: small;
+    }
 }
