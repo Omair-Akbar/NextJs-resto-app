@@ -4,6 +4,7 @@ import Footer from "./_components/Footer";
 import { MdLocationPin } from "react-icons/md";
 import { IoRestaurantSharp } from "react-icons/io5";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 
 
@@ -12,10 +13,11 @@ export default function Home() {
   const [restaurants, setRestaurants] = useState([]);
   const [selected, setSelected] = useState("");
   const [showCity, setShowCity] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     loadLocation();
-    loadrestaurants();
+    loadRestaurants();
   }, [])
 
   const loadLocation = async () => {
@@ -25,9 +27,14 @@ export default function Home() {
       setLocation(response.result)
     }
   }
-  console.log(restaurants)
-  const loadrestaurants = async () => {
-    let response = await fetch("http://localhost:3000/api/customer")
+
+
+  const loadRestaurants = async (params) => {
+    let url="http://localhost:3000/api/customer";
+    if(params?.location){
+      url=url+"?location="+params.location
+    }
+    let response = await fetch(url);
     response = await response.json()
     if (response.success) {
       setRestaurants(response.result)
@@ -37,6 +44,7 @@ export default function Home() {
   const handleListItem = (e) => {
     setSelected(e)
     setShowCity(false)
+    loadRestaurants({location:e});
   }
   return (<>
     <main>
@@ -54,12 +62,14 @@ export default function Home() {
             </ul>
           </div>
           <div>
-            <input type="text" placeholder="Enter food or restaurant name" className="search-input" />
+            <input type="text" placeholder="Search food"  className="search-input" />
             <span className="restaurant-icon"><IoRestaurantSharp /></span>
           </div>
         </div>
-      </div>
+      </div>  
+         <h3 className="restaurant-heading">Restaurants</h3>
       <div className="restaurants-wrap">
+   
         {
           restaurants.map((item)=>(
             <div className="restaurant">
@@ -69,7 +79,7 @@ export default function Home() {
               <h5>Location : {item.city}</h5>
               <h5>Street : {item.street}</h5>
               <h5>Contact : {item.phone_n}</h5>
-              <button>View menu</button>
+              <button onClick={()=>router.push("/explore/"+item.email)}>View page</button>
               </div>
               
             </div>

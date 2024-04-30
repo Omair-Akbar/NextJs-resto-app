@@ -166,7 +166,7 @@ thead tr td {
     font-weight: 600;
 }
 thead{
-    background: linear-gradient(to right, #ffc200, #ffdd6e);
+    background: linear-gradient(to right, #ffc200, #fdd243);
 }
 
 td,table{
@@ -242,11 +242,16 @@ td img{
     height: 300px;
 }
 .banner-text{
-    display: flex;
-    justify-content: center;
-    color: rgb(195, 197, 186);
-    font-size: 35px;
-    font-weight: 800;
+    font-family:  'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    text-align: center;
+    margin-top: 100px;
+    color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
 }
 *:focus{
     outline: none;
@@ -258,7 +263,7 @@ td img{
     align-items: center;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 6px;
-    margin: 25px;
+    margin: 120px;
 }
 .input-wrapper input{
     height: 40px;
@@ -335,11 +340,12 @@ td img{
 }
 
 .restaurants-wrap{
-background-color: beige;
+background-color: rgb(230, 230, 230);
 display: flex;
  flex-wrap: wrap;
  align-items: center;
  justify-content: space-evenly;
+ padding: 5px;
 }
 .restaurant-inner-image{
     height: 150px;
@@ -363,7 +369,7 @@ display: flex;
 .restaurant div button{
 background-color: #ffc200;
 border-radius: 6px;
-height: 30px;
+height: 35px;
 width: 100px;
 margin: 10px;
 border: 1px solid #a37d008c;
@@ -371,6 +377,7 @@ transition: .1s ease-in;
 font-weight: 550;
 text-align: center;
 cursor: pointer;
+
 }
 .restaurant div button:hover{
     transform: scale(1.05);
@@ -379,7 +386,15 @@ cursor: pointer;
 }
 .name{
     margin-bottom: 5px;
+    font-family:  'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.restaurant-heading{
+    margin-bottom: 5px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 22px;
+    color: #1b1b1b;
+    border: 2px solid rgb(107, 107, 107);
 }
 
 @media screen and (max-width: 685px) {
@@ -397,4 +412,16 @@ cursor: pointer;
     div h5{
         font-size: small;
     }
+}
+.explore-heading{
+    font-family:  'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    text-align: center;
+    margin-top: 100px;
+    color: rgb(255, 255, 255);
+    mix-blend-mode: difference;
 }
