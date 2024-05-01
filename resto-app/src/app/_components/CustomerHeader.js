@@ -1,9 +1,8 @@
 "use client"
 import Link from 'next/link'
-import React, { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
-const CustomerHeader = () => {
-
+const CustomerHeader = (props) => {
 
   return (
     <nav className='header-wrap'>
@@ -13,8 +12,8 @@ const CustomerHeader = () => {
       <div>
         <ul className='uls'>
           <li className='lis'><Link href="/">Home</Link></li>
-          <li className='lis'><Link href="#">Cart (0)</Link></li>
-          <li className='lis'><Link href="#">ContactUs</Link></li>
+          <li className='lis'><Link href="#">Cart(0)</Link></li>
+          <li className='lis'><Link href="#">Contact us</Link></li>
           <li className='lis'><Link href="/restaurant">Add restaurant</Link></li>
           <li className='lis'><Link href="/restaurant"><button className='header-button' >Login</button></Link></li>
         </ul>

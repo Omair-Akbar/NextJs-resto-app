@@ -79,7 +79,7 @@ export default function Home() {
               <h5>Location : {item.city}</h5>
               <h5>Street : {item.street}</h5>
               <h5>Contact : {item.phone_n}</h5>
-              <button onClick={()=>router.push("/explore/"+item.email)}>View page</button>
+              <button onClick={()=>router.push("/explore/"+item.email+"?id="+item._id)}>View page</button>
               </div>
               
             </div>
