@@ -11,9 +11,9 @@ const page = (props) => {
   useEffect(() => {
     loadRestaurantDetail();
   }, [])
-
+ 
   const loadRestaurantDetail = async () => {
-    let id = props.searchParams.id
+    const id = props.searchParams.id
     let response = await fetch(`http://localhost:3000/api/customer/${id}`)
     response = await response.json();
     if (response.success) {
@@ -22,7 +22,7 @@ const page = (props) => {
     }
   }
   const addToCard = (item)=>{
-    setCartData(item);
+   setCartData(item);
   }
 
 
@@ -35,10 +35,13 @@ const page = (props) => {
 
       <div className='wrap-detail'>
         <h3 className="heading">Detail</h3>
+        <hr/>
         <h5 className='detail'>Contact : {resDetail?.phone_n}</h5>
+        <hr/>
         <h5 className='detail'>City : {resDetail?.city}</h5>
+        <hr/>
         <h5 className='detail'>Street : {resDetail?.street}</h5>
-      </div>
+      <hr/></div>
       <h3 className='heading'>Foods</h3>
 
       <div className='wrap-food'>

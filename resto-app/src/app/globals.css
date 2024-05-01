@@ -495,11 +495,9 @@ td img {
 
 .heading {
     text-align: center;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 600;
     font-family: 'Times New Roman', Times, serif;
-    text-decoration-color: #ffc400;
-    text-decoration: underline;
 }
 
 

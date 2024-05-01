@@ -4,6 +4,25 @@ import { useState, useEffect } from 'react'
 
 const CustomerHeader = (props) => {
 
+  const cartStorage =  JSON.parse(localStorage.getItem('cart'));
+  const [cartNumber, setCartNumber] = useState(cartStorage?.length);
+  const [cartItem, setCartItem] = useState();
+
+  useEffect(()=>{
+    if(props.cartData){
+          if(cartNumber){
+
+    }else{
+      setCartNumber(1)
+      setCartItem([props.cartData])
+      
+}
+  localStorage.setItem('cart',JSON.stringify([props.cartData]));
+
+    }
+  },[props.cartData])
+
+
   return (
     <nav className='header-wrap'>
       <div className='logo'>
@@ -12,7 +31,7 @@ const CustomerHeader = (props) => {
       <div>
         <ul className='uls'>
           <li className='lis'><Link href="/">Home</Link></li>
-          <li className='lis'><Link href="#">Cart(0)</Link></li>
+          <li className='lis'><Link href="#">Cart({cartNumber})</Link></li>
           <li className='lis'><Link href="#">Contact us</Link></li>
           <li className='lis'><Link href="/restaurant">Add restaurant</Link></li>
           <li className='lis'><Link href="/restaurant"><button className='header-button' >Login</button></Link></li>
