@@ -2,17 +2,24 @@
 import CustomerHeader from '@/app/_components/CustomerHeader'
 import React, { useEffect, useState } from 'react'
 
-const page = (props) => {
+  const page = (props) => {
   const name = props.params.name
   const [resDetail, setResDetail] = useState();
   const [foodItems, setFoodItems] = useState([]);
   const [cartData, setCartData] = useState();
+  const [cartStorage , setCartStorage] = useState(JSON.parse(localStorage.getItem('cart')));
+  // const cartStorage  = (JSON.parse(localStorage.getItem('cart')));
+
+  const [cartIds,setCardIds] = useState(cartStorage?()=>cartStorage.map((item)=>{
+    return item._id
+  }):[])
+
 
   useEffect(() => {
     loadRestaurantDetail();
   }, [])
- 
-  const loadRestaurantDetail = async () => {
+
+    const loadRestaurantDetail = async () => {
     const id = props.searchParams.id
     let response = await fetch(`http://localhost:3000/api/customer/${id}`)
     response = await response.json();
@@ -23,6 +30,9 @@ const page = (props) => {
   }
   const addToCard = (item)=>{
    setCartData(item);
+   let localCartIds = cartIds;
+   localCartIds.push(item._id);
+   setCardIds(localCartIds)
   }
 
 
@@ -53,7 +63,13 @@ const page = (props) => {
                 <h3 className='food-name'>Name : {item.name}</h3>
                 <p  className='food-price'>Price : {item.price} rs</p>
                 <p  className='food-detail'>{item.description}</p>
-                <button onClick={()=>addToCard(item)} className='food-button'>Add to cart</button>
+                {
+                  cartIds.includes(item._id)?
+                  <button className='food-button'>Remove from cart</button>:
+                  <button onClick={()=>addToCard(item)} className='food-button'>Add to cart</button>
+                }
+                
+                
               </div>
 
             </div>

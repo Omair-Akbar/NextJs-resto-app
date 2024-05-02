@@ -5,41 +5,35 @@ import { useState, useEffect } from 'react'
 const CustomerHeader = (props) => {
 
   const cartStorage = JSON.parse(localStorage.getItem('cart'));
-  const [cartNumber, setCartNumber] = useState(cartStorage?.length);  
+  const [cartNumber, setCartNumber] = useState(cartStorage?.length);
   const [cartArray, setCartArray] = useState([]);
-  let localCart;
-  useEffect(() => {
+
+
+  let localCart=[];
+
+  const updateCart = () => {
+    setCartArray(JSON.parse(JSON.stringify(localCart)));
+  }
+
+
+  useEffect(()  => {
     if (props.cartData) {
       if (cartNumber) {
+
         localCart = JSON.parse(localStorage.getItem('cart'))
         localCart.push(props.cartData);
-        setCartArray(localCart);
-        setCartNumber(cartNumber+1)
-        localStorage.setItem('cart', JSON.stringify(localCart))
+        setCartNumber(cartNumber + 1);
+        localStorage.setItem('cart', JSON.stringify(localCart));
+        updateCart();
       } else {
         setCartNumber(1);
-        localStorage.setItem('cart', JSON.stringify([props.cartData]))
+        localStorage.setItem('cart', JSON.stringify([props.cartData]));
+        localCart = JSON.parse(localStorage.getItem('cart'));
+        updateCart();
       }
 
-
-
-
-      // if (cartNumber) {
-      //   addItemToArray(props.cartData);
-      //   setCartItem(myArray);
-      //   setCartNumber(cartNumber+1)
-      //   localStorage.setItem('cart', JSON.stringify(myArray))
-
-      // } else {
-      //   setCartNumber(1)
-      //   setCartItem([props.cartData])
-      //   localStorage.setItem('cart', JSON.stringify([props.cartData]));
-
-      // }
-      
     }
   }, [props.cartData])
-
 
   return (
     <nav className='header-wrap'>
