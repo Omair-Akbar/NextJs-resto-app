@@ -4,31 +4,20 @@ import { useState, useEffect } from 'react'
 
 const CustomerHeader = (props) => {
 
-  // const cartStorage = JSON.parse(localStorage.getItem('cart'));
-  const [cartNumber, setCartNumber] = useState();  //cartStorage?.length
-  const [cartItem, setCartItem] = useState();  //cartStorage
+  const cartStorage = JSON.parse(localStorage.getItem('cart'));
+  const [cartNumber, setCartNumber] = useState(cartStorage?.length);  
   const [cartArray, setCartArray] = useState([]);
-
-  const addItemToArray = (item) => {
-    setCartArray([...cartArray, item]);
-  };
-
+  let localCart;
   useEffect(() => {
     if (props.cartData) {
       if (cartNumber) {
-        console.log(props.cartData)
-        setCartNumber(cartNumber + 1)
-        let localCart = JSON.parse(localStorage.getItem('cart'))
+        localCart = JSON.parse(localStorage.getItem('cart'))
         localCart.push(props.cartData);
         setCartArray(localCart);
-        // setCartArray(cartArray.push(props.cartData));
-        console.log(localCart)
-        console.log("((((((((())))))))")
-        console.log(cartArray)
+        setCartNumber(cartNumber+1)
         localStorage.setItem('cart', JSON.stringify(localCart))
       } else {
         setCartNumber(1);
-        console.log(props.cartData)
         localStorage.setItem('cart', JSON.stringify([props.cartData]))
       }
 
@@ -47,7 +36,7 @@ const CustomerHeader = (props) => {
       //   localStorage.setItem('cart', JSON.stringify([props.cartData]));
 
       // }
-
+      
     }
   }, [props.cartData])
 
