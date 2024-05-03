@@ -3,8 +3,18 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+    scroll-behavior:smooth;
 }
+ body::-webkit-scrollbar{
+    width: 12px;
+ }
+ body::-webkit-scrollbar-track{
+    background: rgba(228, 228, 228, 0);
+ }
+ body::-webkit-scrollbar-thumb{
+    background-color: #535353;
+    border-radius: 20px;
+ }
 
 body {
     background-color: rgb(218, 218, 218);
@@ -454,6 +464,7 @@ td img {
     font-size: 22px;
     color: #1b1b1b;
     border: 2px solid rgb(107, 107, 107);
+    border-right: 0px;
 }
 
 @media screen and (max-width: 685px) {
@@ -488,52 +499,33 @@ td img {
     font-size: 40px;
     text-align: center;
     margin-top: 100px;
-    color: white;
+    color: #ffffff;
     mix-blend-mode: difference;
     font-weight: 800;
 }
 
 .heading {
     text-align: center;
-    font-size: 28px;
     font-weight: 600;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: #ffc400;
+    font-family:  'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+background-color: #1f1f1f;
 }
-
-
-.detail {
-    margin-left: 18px;
-}
-
 .detail {
     font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     text-align: start;
     margin-top: 5px;
     color: white;
     mix-blend-mode: difference;
     font-weight: 600;
+    margin-left: 18px;
 }
 
 .food-image {
     height: 130px;
     padding: 10px;
-}
-
-.food {
-    background-color: rgb(255, 255, 255);
-    border-radius: 16px;
-    border: 1px solid black;
-    margin: 10px;
-    display: flex;
-    justify-content: space-between;
-    max-width: 400px;
-}
-
-.wrap-food {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .food-button {
@@ -556,16 +548,43 @@ td img {
     background-color: #fcca25;
 }
 
-.food-name {
-    margin: 20px 20px 5px 20px;
+.item{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    padding-top:10px;
+    padding-bottom: 10px;
 }
-
-.food-price {
-    font-weight: 500;
-    margin: 0 20px 0 20px;
+.image-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.food-detail {
-    margin: 0 20px 0 20px;
-
+.item-div1{
+    display: flex;
+    align-items: center;
+}
+.price-div{
+    display: flex;
+    align-items: center;
+}
+.price{
+    font-family:  'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: 550;
+}
+.total-wrapper{
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.total-wrapper .row{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 20px;
+    padding: 5px 0px 5px 0px;
+    font-weight: bold;
 }
