@@ -31,7 +31,7 @@ const Header = () => {
       <div>
         <ul className='uls'>
           <li className='lis'><Link href="/">Home</Link></li>
-          <li className='lis'><Link href="#">Contact us</Link></li>
+          <li className='lis'><Link href="/contactus">Contact us</Link></li>
            {
             details && details.email?<li className='lis'><Link href="/restaurant"><button onClick={logout} className='header-button' >Logout</button></Link></li>:<li className='lis'><Link href="/restaurant"><button className='header-button' >Login</button></Link></li>
           }

@@ -5,7 +5,8 @@ import Footer from '../_components/Footer'
 import { TAX } from "../lib/constant"
 import { DELIVERY_CHARGES } from '../lib/constant'
 
-const cart = () => {
+
+  const cart = () => {
   const [itemArray, setItemArray] = useState(JSON.parse(localStorage.getItem('cart')) || [])
   const [foodPrice] = useState(sumOfPrices(itemArray))
   let tax = TAX * foodPrice
@@ -17,10 +18,16 @@ const cart = () => {
     });
     return sum;
   }
+  const removeFromCart = (id) => {
+    console.log("you remove the item" )
+  }
+  
   return (
+
+    // removeItem={xxxxxxxx}
     <>
-      <CustomerHeader />
-      <h1 style={{ fontSize: "38px",backgroundColor:"silver", padding: "15px",color:"black" }} className='heading'>CART</h1>
+      <CustomerHeader  />
+      <h1 style={{ fontSize: "38px", backgroundColor: "silver", padding: "15px", color: "black" }} className='heading'>CART</h1>
       <div className='item-wrap'>
         <hr />
         {itemArray.map((item) => (<>
@@ -42,7 +49,6 @@ const cart = () => {
           <hr />
         </>
         ))}
-
       </div>
       <div className='total-wrapper'>
         <div className='row'>
@@ -59,12 +65,16 @@ const cart = () => {
         </div>
         <div className='row'>
           <span>Total amount : </span>
-          <span>{foodPrice+tax+DELIVERY_CHARGES}</span>
+          <span>{foodPrice?foodPrice + tax + DELIVERY_CHARGES:0}</span>
         </div>
+        
       </div>
+        <div className='order-div'>
+          <button className='food-button'>{foodPrice?"Order now!":"Cart is empty"}</button>
+        </div>
       <Footer />
     </>
   )
-}
+        }
 
 export default cart;

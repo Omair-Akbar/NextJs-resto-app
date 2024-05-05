@@ -71,7 +71,7 @@ const CustomerHeader = (props) => {
         <ul className='uls'>
           <li className='lis'><Link href="/">Home</Link></li>
           <li className='lis'><Link href="/cart">Cart({cartNumber ? cartNumber : 0})</Link></li>
-          <li className='lis'><Link href="#">Contact us</Link></li>
+          <li className='lis'><Link href="/contactus">Contact us</Link></li>
           <li className='lis'><Link href="/restaurant">Add restaurant</Link></li>
           <li className='lis'><Link href="/restaurant"><button className='header-button' >Login</button></Link></li>
         </ul>

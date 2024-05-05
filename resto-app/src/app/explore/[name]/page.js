@@ -9,7 +9,6 @@ const page = (props) => {
   const [foodItems, setFoodItems] = useState([]);
   const [cartData, setCartData] = useState();
   const [cartStorage, setCartStorage] = useState(JSON.parse(localStorage.getItem('cart')));
-  // const cartStorage  = (JSON.parse(localStorage.getItem('cart')));
   const [cartIds, setCardIds] = useState(cartStorage ? () => cartStorage.map((item) => {
     return item._id
   }) : [])
@@ -82,7 +81,7 @@ const page = (props) => {
                   </div>
                 </div>
                 <div className='price-div'>
-                  <p className='price'>Price : {item.price} </p>
+                  <p className='price'>Price : {item.price}</p>
                 </div>
               </div>
               <hr />
